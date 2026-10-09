@@ -1,0 +1,28 @@
+ii  binutils                               2.46-3                                   amd64        GNU assembler, linker and binary utilities
+ii  binutils-common:amd64                  2.46-3                                   amd64        Common files for the GNU assembler, linker and binary utilities
+ii  binutils-mingw-w64-base                2.45.90.20260125-1+13.3                  amd64        Cross-binutils for Win32 and Win64 using MinGW-w64 (base package)
+ii  binutils-mingw-w64-i686                2.45.90.20260125-1+13.3                  amd64        Cross-binutils for Win32 (x86) using MinGW-w64
+ii  binutils-mingw-w64-x86-64              2.45.90.20260125-1+13.3                  amd64        Cross-binutils for Win64 (x64) using MinGW-w64
+ii  binutils-x86-64-linux-gnu              2.46-3                                   amd64        GNU binary utilities, for x86-64-linux-gnu target
+ii  dkms                                   3.2.2-1                                  all          Dynamic Kernel Module System (DKMS)
+ii  firmware-realtek                       20260309-1                               all          Binary firmware for Realtek network and audio chips
+ii  gcc                                    4:15.2.0-5                               amd64        GNU C compiler
+ii  gcc-15                                 15.2.0-17                                amd64        GNU C compiler
+ii  gcc-15-base:amd64                      15.2.0-17                                amd64        GCC, the GNU Compiler Collection (base package)
+ii  gcc-15-x86-64-linux-gnu                15.2.0-17                                amd64        GNU C compiler for the x86_64-linux-gnu architecture
+ii  gcc-16-base:amd64                      16.1.0-1                                 amd64        GCC, the GNU Compiler Collection (base package)
+ii  gcc-mingw-w64-base                     15.2.0-12+28.3                           amd64        GNU Compiler Collection for MinGW-w64 (base package)
+ii  gcc-mingw-w64-i686-win32               15.2.0-12+28.3                           amd64        GNU C compiler for MinGW-w64, Win32/Win32
+ii  gcc-mingw-w64-i686-win32-runtime       15.2.0-12+28.3                           amd64        GNU Compiler Collection for MinGW-w64, i686/Win32
+ii  gcc-mingw-w64-x86-64-win32             15.2.0-12+28.3                           amd64        GNU C compiler for MinGW-w64, Win64/Win32
+ii  gcc-mingw-w64-x86-64-win32-runtime     15.2.0-12+28.3                           amd64        GNU Compiler Collection for MinGW-w64, x86-64/Win32
+ii  gcc-x86-64-linux-gnu                   4:15.2.0-5                               amd64        GNU C compiler for the amd64 architecture
+ii  libbinutils:amd64                      2.46-3                                   amd64        GNU binary utilities (private shared library)
+ii  libgcc-15-dev:amd64                    15.2.0-17                                amd64        GCC support library (development files)
+ii  libgcc-s1:amd64                        16.1.0-1                                 amd64        GCC support library
+ii  proxmark3-firmwares                    4.18994-0kali2                           all          Firmwares for the Proxmark3
+ii  python3-pygccxml                       3.0.2-2                                  all          specialized XML reader reads the output from gccxml - python3 lib
+ii  realtek-rtl8814au-dkms                 5.8.5.1~git20250903.8d82854-0kali1       all          Realtek RTL8814AU driver in DKMS format for kernel < 6.15
+ii  realtek-rtl88xxau-dkms                 5.6.4.2~git20250330.c3fb89a-0kali1       all          Realtek RTL88xxAU driver in DKMS format
+ii  ubertooth-firmware                     2020.12.R1-0kali3                        all          Firmware for Ubertooth
+ii  xtrx-dkms                              0.0.1+git20190320.5ae3a3e-4~kali3        all          XTRX PCI driver for Linux

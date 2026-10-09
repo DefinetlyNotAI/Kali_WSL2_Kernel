@@ -1,0 +1,4 @@
+realtek-rtl8814au/5.8.5.1~git20250903.8d82854: added
+realtek-rtl88xxau/5.6.4.2~git20250330.c3fb89a: added
+xtrx/0.0.1+git20190320.5ae3a3e, 6.18.33.2-microsoft-standard-WSL2+, x86_64: installed
+xtrx/0.0.1+git20190320.5ae3a3e, 6.18.54.1-microsoft-standard-WSL2-CustomShahmKernal, x86_64: installed

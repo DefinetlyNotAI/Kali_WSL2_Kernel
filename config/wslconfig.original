@@ -1,0 +1,3 @@
+[wsl2]
+kernel=C:\\Users\\Shahm Najeeb\\6.18.54.1-microsoft-standard-WSL2-CustomShahmKernal
+kernelModules=C:\\Users\\Shahm Najeeb\\6.18.54.1-microsoft-standard-WSL2-CustomShahmKernal-modules-wsl2.7.vhdx

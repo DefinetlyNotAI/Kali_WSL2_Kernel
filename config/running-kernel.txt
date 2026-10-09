@@ -1,0 +1,2 @@
+Linux Shahm 6.18.54.1-microsoft-standard-WSL2-CustomShahmKernal #1 SMP PREEMPT_DYNAMIC Fri Oct  9 00:40:58 +03 2026 x86_64 GNU/Linux
+Linux version 6.18.54.1-microsoft-standard-WSL2-CustomShahmKernal (kali@Shahm) (gcc (Debian 15.2.0-17) 15.2.0, GNU ld (GNU Binutils for Debian) 2.46) #1 SMP PREEMPT_DYNAMIC Fri Oct  9 00:40:58 +03 2026

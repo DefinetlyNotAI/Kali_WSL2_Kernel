@@ -1,0 +1,90 @@
+{
+  "captured_on": "2026-10-09",
+  "target": "x86_64 Kali Linux on Windows WSL2",
+  "kernel_release": "6.18.54.1-microsoft-standard-WSL2-CustomShahmKernal",
+  "kernel_source_commit": "d504d40ab83839cb61942a812a99d183c42227b9",
+  "kernel_source_repository": "https://github.com/microsoft/WSL2-Linux-Kernel.git",
+  "kernel_source_tracked_changes": false,
+  "kernel_config_sha256": "b0fd93123283ce534729e286b5e8f90d26d0c2cc3502a2c4de4264c80266415c",
+  "original_kernel_sha256": "03c4d1acb0e96214b1a2df826a63044147d777ef24d8bd6f562517ed2fde8443",
+  "original_modules_vhdx_sha256": "f58a6d93d1c6fd14be4553a84261c3b23caf4a19eb15af52ea110fabbc26b97f",
+  "files": [
+    {
+      "path": "assets/driver-settings.tar.gz",
+      "bytes": 1971,
+      "sha256": "d7e25b84901e06581a99d22086a0ff1848678863a4caf5a0da2f1379b6b53f84"
+    },
+    {
+      "path": "assets/driver-sources.tar.gz",
+      "bytes": 5454407,
+      "sha256": "988c6b88c42e6aa0b323a5054071bbdeb5a53ce021ce8fde506fb6328e3d269c"
+    },
+    {
+      "path": "assets/extra-modules.tar.gz",
+      "bytes": 19833,
+      "sha256": "365a00fea0157a6fcd441746543975ad6d7261cd0ba48d11f5ff3f41be2c5adc"
+    },
+    {
+      "path": "assets/firmware.tar.gz",
+      "bytes": 14509566,
+      "sha256": "3b67c234104190d6f38acf80d6e50cbf8d9ba1167b1f819b4e3e97e9afaaa244"
+    },
+    {
+      "path": "assets/kernel",
+      "bytes": 18645504,
+      "sha256": "03c4d1acb0e96214b1a2df826a63044147d777ef24d8bd6f562517ed2fde8443"
+    },
+    {
+      "path": "assets/kernel-build-metadata.tar.gz",
+      "bytes": 493589,
+      "sha256": "e2cf59f47e37f248086e937ec08f18e5b81a2f6ba367eec488afd326265babe6"
+    },
+    {
+      "path": "assets/kernel-source.tar.gz",
+      "bytes": 325180584,
+      "sha256": "9a15d3511852380473b97052c865063ca99660ebdf2d29315cb1ec9d3c36e0d0"
+    },
+    {
+      "path": "assets/modules.vhdx.gz",
+      "bytes": 949750654,
+      "sha256": "5645e331eec461da1ac45961829a69709c7fbe3dd62f3d037d53de788285757e"
+    },
+    {
+      "path": "assets/xtrx-dkms.tar.gz",
+      "bytes": 20781,
+      "sha256": "87d7eae1982645996742cb5465e350cf3f7e08c00f95d72127eb44f9146add6a"
+    },
+    {
+      "path": "config/dkms-status.txt",
+      "bytes": 295,
+      "sha256": "31ddc3ae08187e4d1a8b1b15015bedc6254f0c4cd10130eb8b667d2d4c33c705"
+    },
+    {
+      "path": "config/kernel.config",
+      "bytes": 227866,
+      "sha256": "b0fd93123283ce534729e286b5e8f90d26d0c2cc3502a2c4de4264c80266415c"
+    },
+    {
+      "path": "config/packages.txt",
+      "bytes": 3928,
+      "sha256": "e9d78bb1d627ff408b774bbe20eac980aff94ecbbdadc755c5d125d93d773e6d"
+    },
+    {
+      "path": "config/running-kernel.txt",
+      "bytes": 335,
+      "sha256": "652e8ad4f6c26c2f11ccfe248245acf3a4f49e3aa0fb6c67c7d7216ab7cd8770"
+    },
+    {
+      "path": "config/wsl.conf.original",
+      "bytes": 20,
+      "sha256": "ca76852426d685301ce8b4461d2bc40d1901c93aea8c0b4b684707c94e4cf507"
+    },
+    {
+      "path": "config/wslconfig.original",
+      "bytes": 205,
+      "sha256": "d49698e36530e1c49f24f49185ddedb85e3dfd4030ff061a1b3de9de98a577ad"
+    }
+  ],
+  "installer_tested": false,
+  "rebuild_tested": false
+}
