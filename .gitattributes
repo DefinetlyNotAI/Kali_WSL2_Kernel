@@ -5,3 +5,5 @@
 *.json text eol=lf
 # Preserve captured configuration bytes and their recorded SHA-256 hashes.
 config/* -text
+assets/*.gz filter=lfs diff=lfs merge=lfs -text
+assets/kernel filter=lfs diff=lfs merge=lfs -text

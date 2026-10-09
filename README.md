@@ -90,8 +90,14 @@ from its `[wsl2]` section, then run `wsl --shutdown` to use WSL's default kernel
 
 ## Status
 
-Captured on 2026-10-09. The installer and rebuild script were **not run or tested**,
-as requested. Existing kernel files, source trees and system configuration were
+Captured on `2026-10-09`. The installer and rebuild script were **not run or tested**. Existing kernel files, source trees and system configuration were
 not changed while preparing this kit.
-Scripts and metadata are committed locally. Large bundled archives are excluded
-from Git: copying/cloning only the Git repository is not enough; retain the full folder.
+
+
+Scripts, metadata and bundled assets are committed locally. Archives and the kernel
+binary use Git LFS. Install Git LFS before cloning, then run `git lfs install`.
+
+
+A normal `git clone` downloads the full kit, including the assets. If LFS downloads
+were skipped, run `git lfs pull` inside the clone before using the installer.
+The Git remote must also contain the LFS objects; this kit has not been pushed.
