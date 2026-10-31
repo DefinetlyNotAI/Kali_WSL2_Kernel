@@ -33,7 +33,22 @@ $distros = (& wsl.exe --list --quiet) -replace "`0", ''
 if ($LASTEXITCODE -ne 0 -or $Distro -notin @($distros | ForEach-Object { $_.Trim() })) {
     throw "Install and initialize '$Distro' first: wsl --install -d kali-linux"
 }
-Invoke-Wsl -Arguments @('--set-version', $Distro, '2')
+# Check WSL version without reconverting an existing WSL2 distro
+$wslList = (wsl.exe --list --verbose) -replace "`0", ""
+
+$matchingDistro = $wslList |
+    Where-Object { $_ -match "^\s*\*?\s*$([regex]::Escape($Distro))\s+" }
+
+if (-not $matchingDistro) {
+    throw "WSL distribution '$Distro' was not found."
+}
+
+if ($matchingDistro -notmatch "\s2\s*$") {
+    Invoke-Wsl -Arguments @('--set-version', $Distro, '2')
+}
+else {
+    Write-Host "$Distro is already WSL2. Skipping conversion."
+}
 
 Write-Host 'Checking bundled files before installation...'
 $manifest = Get-Content -LiteralPath (Join-Path $PSScriptRoot 'manifest.json') -Raw | ConvertFrom-Json
@@ -53,8 +68,8 @@ if ($Rebuilt) {
 }
 
 # wslpath handles both spaces and a different Windows account on future installs.
-$linuxKit = (& wsl.exe -d $Distro -u root -- wslpath -a -u $PSScriptRoot).Trim()
-if ($LASTEXITCODE -ne 0 -or -not $linuxKit) { throw 'Could not resolve the kit directory inside Kali.' }
+$linuxKit = "/mnt/" + $PSScriptRoot.Substring(0,1).ToLowerInvariant() + $PSScriptRoot.Substring(2).Replace("\", "/")
+if (-not $linuxKit) { throw 'Could not resolve the kit directory inside Kali.' }
 Invoke-Wsl -Arguments @('-d', $Distro, '-u', 'root', '--', 'bash', "$linuxKit/install-linux.sh", 'prepare', $mode)
 
 $destination = Join-Path $env:USERPROFILE 'ShahmCustomKernel'
@@ -105,3 +120,5 @@ try {
     throw
 }
 Write-Host "Installed $release for $Distro. Open Kali normally to use it."
+
+

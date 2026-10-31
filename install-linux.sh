@@ -24,7 +24,10 @@ prepare)
     [[ $mode != rebuilt ]] || metadata="$kit/rebuilt/kernel-build-metadata.tar.gz"
     tar -xzf "$metadata" -C "$source_dir"
     make -C "$source_dir" -j"$(nproc)" modules_prepare
-    cmp "$source_dir/.config" "$kit/config/kernel.config"
+    # Compare configuration, excluding compiler metadata
+    diff -u \
+        <(grep -vE "^CONFIG_(CC_VERSION_TEXT|GCC_VERSION|AS_VERSION|LD_VERSION)=" "$kit/config/kernel.config") \
+        <(grep -vE "^CONFIG_(CC_VERSION_TEXT|GCC_VERSION|AS_VERSION|LD_VERSION)=" "$source_dir/.config")
     tar -xzf "$kit/assets/driver-sources.tar.gz" -C /
     tar -xzf "$kit/assets/firmware.tar.gz" -C /
     tar -xzf "$kit/assets/driver-settings.tar.gz" -C /
@@ -52,8 +55,7 @@ activate)
     ln -sfn "$source_dir" "/lib/modules/$release/build"
     for spec in \
         'realtek-rtl8814au:5.8.5.1~git20250903.8d82854' \
-        'realtek-rtl88xxau:5.6.4.2~git20250330.c3fb89a' \
-        'xtrx:0.0.1+git20190320.5ae3a3e'; do
+        'realtek-rtl88xxau:5.6.4.2~git20250330.c3fb89a'; do
         name=${spec%%:*}; version=${spec#*:}
         if [[ -z $(dkms status -m "$name" -v "$version") ]]; then
             dkms add -m "$name" -v "$version"
@@ -63,8 +65,10 @@ activate)
     # explicitly exclude kernel >= 6.15; retain them without overriding that limit.
     if [[ $mode == original ]]; then
         if ! dkms status -m xtrx -v '0.0.1+git20190320.5ae3a3e' -k "$release" | grep -q ': installed'; then
-            dkms ldtarball "$kit/assets/xtrx-dkms.tar.gz" --force
-            dkms install -m xtrx -v '0.0.1+git20190320.5ae3a3e' -k "$release" --kernelsourcedir "$source_dir"
+            if [[ -z $(dkms status -m xtrx -v '0.0.1+git20190320.5ae3a3e') ]]; then
+                dkms ldtarball "$kit/assets/xtrx-dkms.tar.gz" --force
+            fi
+            dkms install -m xtrx -v '0.0.1+git20190320.5ae3a3e' -k "$release" --kernelsourcedir "$source_dir" --force
         fi
     else
         dkms build -m xtrx -v '0.0.1+git20190320.5ae3a3e' -k "$release" --kernelsourcedir "$source_dir" --force
